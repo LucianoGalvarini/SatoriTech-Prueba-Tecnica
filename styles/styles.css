@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px 0;
+  background-color: #fafafadd;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+section label {
+  margin-bottom: 10px;
+}
+
+main {
+  text-align: center;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.details {
+  font-size: 18px;
+  margin: 0 25px;
+}
+
+.details p strong {
+  margin-right: 10px;
+}
+
+.residentsIsEmpty {
+  text-align: center;
+  padding: 25% 0;
+}
+
+.pointer {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pointer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
