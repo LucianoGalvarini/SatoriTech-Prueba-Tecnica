@@ -1,7 +1,6 @@
 # SatoriTech-Prueba-Tecnica
 
 Prueba técnica con Rick and Morty API
-
 ## Cómo ejecutar el código
 
 Dentro de la carpeta principal, encontrarás dos carpetas secundarias.
@@ -31,3 +30,6 @@ En la carpeta `second-part-laravel` se encuentra la primera parte del ejercicio.
 4. Ejecutar el comando `php artisan migrate`
 
 5. Ejecutar el comando `php artisan serve`
+
+
+Las cards que se renderizan al buscar por ID de localización muestran su información en un modal al hacer click en la imagen, y las otras cards no tienen modal.
