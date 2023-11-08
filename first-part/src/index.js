@@ -71,9 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (residentes.length) {
       residentes.forEach((residente, index) => {
         const cardHtml = `
-          <div class="col-12 col-md-3 mt-5">
+          <div class="row col mt-5">
             <div class="card pointer" style="width: 235px;">
-              <img src="${residente.image}" class="card-img-top" alt="${residente.name}" 
+              <img src="${residente.image}" class="card-img" alt="${residente.name}" 
                 data-bs-toggle="modal" data-bs-target="#characterModal"
                 data-character-index="${index}">
                 <h6 class="card-title m-auto py-2">${residente.name}</h6>                
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const characterOrigin = modal.querySelector("#characterOrigin");
     const characterEpisodes = modal.querySelector("#characterEpisodes");
 
-    modalHeader.textContent = `Detalles del residente: ${character.name}`;
+    modalHeader.textContent = `Resident's details: ${character.name}`;
     characterImage.src = character.image;
     characterName.textContent = character.name;
     characterStatus.textContent = character.status;
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const episodesHtml = character.episodes.map((episode) => {
       const episodeNumber = episode.match(/\d+/);
       if (episodeNumber) {
-        return `<p><a href="${episode}" target="_blank" style="font-size: 16px;">Episodio ${episodeNumber[0]}</a></p>`;
+        return `<p><a href="${episode}" target="_blank" style="font-size: 16px;">Episode ${episodeNumber[0]}</a></p>`;
       }
       return episode;
     });
