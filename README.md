@@ -17,7 +17,7 @@ En la carpeta `first-part` se encuentra la primera parte del ejercicio. Sigue es
 
 ### Segunda parte de la prueba técnica
 
-En la carpeta `second-part-laravel` se encuentra la primera parte del ejercicio. Sigue estos pasos para ejecutar el proyecto:
+En la carpeta `second-part-laravel` se encuentra la segunda parte del ejercicio. Sigue estos pasos para ejecutar el proyecto:
 
 #### Pasos para ejecutar el proyecto
 
