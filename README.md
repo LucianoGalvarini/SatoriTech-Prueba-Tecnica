@@ -1,6 +1,7 @@
 # SatoriTech-Prueba-Tecnica
 
-Prueba técnica de con Rick and Morty API
+Prueba técnica con Rick and Morty API
+
 ## Cómo ejecutar el código
 
 Dentro de la carpeta principal, encontrarás dos carpetas secundarias.
@@ -21,4 +22,12 @@ En la carpeta `second-part-laravel` se encuentra la primera parte del ejercicio.
 
 #### Pasos para ejecutar el proyecto
 
-1. 
+1. Abrir una terminal en la carpeta y ejecutar `npm i`
+
+2. Ejecutar el comando `composer install`
+
+3. Abrir XAMPP e iniciar Apache y MySql
+
+4. Ejecutar el comando `php artisan migrate`
+
+5. Ejecutar el comando `php artisan serve`
