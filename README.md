@@ -1,3 +1,6 @@
+# SatoriTech-Prueba-Tecnica
+
+Prueba técnica de con Rick and Morty API
 ## Cómo ejecutar el código
 
 Dentro de la carpeta principal, encontrarás dos carpetas secundarias.
