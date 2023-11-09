@@ -23,9 +23,9 @@ class CharacterController extends Controller
 
             $this->saveCharacters($data);
 
-            return $this->successResponse();
+            return $this->successResponse('Characters saved successfully');
         } catch (\Exception $e) {
-            return $this->errorResponse();
+            return $this->errorResponse('Failed to save characters');
         }
     }
 
@@ -55,20 +55,23 @@ class CharacterController extends Controller
         $character->save();
     }
 
-    private function successResponse()
-    {
-        return response()->json(['message' => 'Characters saved successfully']);
-    }
-
-    private function errorResponse()
-    {
-        return response()->json(['error' => 'Failed to save characters'], 500);
-    }
-
-
     public function showCharacters()
     {
-        $characters = Character::all();
-        return view('home', ['characters' => $characters]);
+        try {
+            $characters = Character::all();
+            return view('home', ['characters' => $characters]);
+        } catch (\Exception $e) {
+            return $this->errorResponse('Failed to show characters');
+        }
+    }
+
+    private function successResponse($message)
+    {
+        return response()->json(['message' => $message], 200);
+    }
+
+    private function errorResponse($message)
+    {
+        return response()->json(['error' => $message], 500);
     }
 }
