@@ -18,27 +18,53 @@ class CharacterController extends Controller
             $data = json_decode($request->getContent(), true);
 
             if (!$data) {
-                return response()->json(['error' => 'Invalid JSON data'], 400);
+                return $this->invalidJsonResponse();
             }
 
-            foreach ($data as $characterData) {
-                $existingCharacter = Character::where('name', $characterData['name'])->first();
+            $this->saveCharacters($data);
 
-                if (!$existingCharacter) {
-                    $character = new Character;
-                    $character->name = $characterData['name'];
-                    $character->status = $characterData['status'];
-                    $character->species = $characterData['species'];
-                    $character->image = $characterData['image'];
-                    $character->save();
-                }
-            }
-
-            return response()->json(['message' => 'Characters saved successfully']);
+            return $this->successResponse();
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Failed to save characters'], 500);
+            return $this->errorResponse();
         }
     }
+
+    private function invalidJsonResponse()
+    {
+        return response()->json(['error' => 'Invalid JSON data'], 400);
+    }
+
+    private function saveCharacters(array $data)
+    {
+        foreach ($data as $characterData) {
+            $existingCharacter = Character::where('name', $characterData['name'])->first();
+
+            if (!$existingCharacter) {
+                $this->createCharacter($characterData);
+            }
+        }
+    }
+
+    private function createCharacter(array $characterData)
+    {
+        $character = new Character;
+        $character->name = $characterData['name'];
+        $character->status = $characterData['status'];
+        $character->species = $characterData['species'];
+        $character->image = $characterData['image'];
+        $character->save();
+    }
+
+    private function successResponse()
+    {
+        return response()->json(['message' => 'Characters saved successfully']);
+    }
+
+    private function errorResponse()
+    {
+        return response()->json(['error' => 'Failed to save characters'], 500);
+    }
+
 
     public function showCharacters()
     {
